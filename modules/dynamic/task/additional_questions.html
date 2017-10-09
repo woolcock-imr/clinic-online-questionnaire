@@ -1,0 +1,33 @@
+<section>
+    VmInclude:__PARTS__/grid/grid.html
+</section>
+<script>
+    function F__ID(){
+        //-------------------------------------
+        VmInclude:__PARTS__/grid/grid.js
+        VmInclude:__PARTS__/style/ease-in-out.js
+		VmInclude:__CURRENT_PATH__/task.js
+        //-------------------------------------
+		_task_fields="Tea,Coffee,Cola,Alcohol,smoker,smoker_per_day,smoker_years,ex_smoker_day,ex_smoker_years,ex_smoker_quit,None,MRSA,VRE,MRAB,Other,infectious_diseases_other,infectious_diseases_year,infectious_diseases_site,wheelchair,carer,interpreter,interpreter_language,diet,diet_type,height,weight,asleep_operating,volunteer";
+        _fields="_Form,Status|S3,Notes|NT,Participant,"+_task_fields;
+        _fields+=",Submit Date|DateTime,Submitted by|Author,_Delete,_Hidden|Participant_uid";
+        _grid_to_form_parameters={task_fields:_task_fields};
+		//-------------------------------------
+        $('#D__ID').on('load',function(){  _set_req(); _request_data(); })
+        //-------------------------------------
+		_cell_render=function(records,I,field,td,set_value,source){
+            _default_cell_render(records,I,field,td,set_value,source);
+            switch(field){
+            }
+        }
+        //-------------------------------------
+		_before_submit=function(record,dbv){
+			return _set_status_and_participant(record,dbv);
+        };
+        //-------------------------------------
+    }
+</script>
+<style>
+    VmInclude:__PARTS__/grid/grid.css
+    VmInclude:__PARTS__/style/ease-in-out.2.css
+</style>

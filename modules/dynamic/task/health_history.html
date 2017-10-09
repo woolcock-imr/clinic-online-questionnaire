@@ -1,0 +1,35 @@
+<section>
+    VmInclude:__PARTS__/grid/grid.html
+</section>
+<script>
+    function F__ID(){
+        //-------------------------------------
+        VmInclude:__PARTS__/grid/grid.js
+        VmInclude:__PARTS__/style/ease-in-out.js
+		VmInclude:__CURRENT_PATH__/task.js
+        //-------------------------------------
+		_task_fields="heart_failure,pacemaker,angina,hypertension,heart_other_specify,heart_other,shortness_of_breath,tuberculosis,copd,asthma,lung_other_specify,lung_other,blood_clot,anaemia,bleeding,diabetes_1,diabetes_2,morning_headaches,broken_nose,claustrophobia,thyroid,kidney,hepatitis_a,hepatitis_b,hepatitis_c,alcohol,drug,deafness,blindness,insomnia,anxiety,depression,stroke,hiv,incontinence,arthritis,heartburn,epilepsy,cataplexy,narcolepsy,tonsillitis,sinusitis,mental_other_specify,mental_other,neuromuscular_other_specify,neuromuscular_other,allergies_other_specify,allergies_other,Other_Medical_Condition,Surgical_Procedure,Medication";
+        _fields="_Form,Status|S3,Notes|NT,Participant,"+_task_fields;
+        _fields+=",Submit Date|DateTime,Submitted by|Author,_Delete,_Hidden|Participant_uid";
+        _grid_to_form_parameters={task_fields:_task_fields};
+		//-------------------------------------
+        $('#D__ID').on('load',function(){  _set_req(); _request_data(); })
+        //-------------------------------------
+		_cell_render=function(records,I,field,td,set_value,source){
+            _default_cell_render(records,I,field,td,set_value,source);
+            switch(field){
+                case 'xxx':
+                    break;
+            }
+        }
+        //-------------------------------------
+		_before_submit=function(record,dbv){
+			return _set_status_and_participant(record,dbv);
+        };
+        //-------------------------------------
+    }
+</script>
+<style>
+    VmInclude:__PARTS__/grid/grid.css
+    VmInclude:__PARTS__/style/ease-in-out.2.css
+</style>
