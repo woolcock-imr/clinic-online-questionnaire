@@ -1,0 +1,104 @@
+<a name=signinout onclick="$vm.nav_click_process('vm_signinout');" style='cursor:pointer'>Sign out</a>
+
+<div id=panel__ID>
+    <div class='nav__ID'>
+	    <span>Tasks</span>
+        <ul>
+			<li module=task-1>Task 1</li>
+			<li module=task-2>Task 2</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+	function F__ID(){
+		//--------------------------------------------------------
+		var group="",config="";
+		$vm.load_config_and_init("/configurations/first.json",function(cfg){
+			config=cfg;
+			if(config.group!==undefined){
+				group=config.group+"_";
+			}
+		});
+		//--------------------------------------------------------
+		$('#panel__ID li').on('click',function(event){
+			event.stopPropagation();
+			if( $(this).hasClass( 'li_not_allowed__ID' )===true){
+				  alert("No permission!");
+				  return;
+			}
+			var m=group+$(this).attr('module');
+			$vm.nav_load_module(m);
+		});
+		//--------------------------------------------------------
+		$('#D__ID').on('load',function(){
+			set_first_link();
+		})
+		//--------------------------------------------------------
+		$('#D__ID').on('show',function(){
+			set_first_link();
+		})
+		//--------------------------------------------------------
+		var set_first_link=function(){
+			var req={cmd:'participant_task_status_v2',participant_username:$vm.user,check_uid:"1",json:"1"};
+			$VmAPI.request({data:req,callback:function(res){
+				var done=0;
+				$('#panel__ID li').each(function(){
+					var $li=$(this);
+					$li.off('click');
+					$li.addClass('li_not_allowed__ID')
+					if(done===0){
+						var module=$li.attr('module');
+						if($vm.module_list[module]==undefined){
+							alert("The module "+module+" is not in the module list");
+							return;
+						}
+						var li_pid=$vm.module_list[module].table_id;
+						var found_pid=0;
+						for(var i=0;i<res.records.length;i++){
+							if(res.records[i]['PID']==li_pid){
+								found_pid=1;
+								break;
+							}
+						}
+						if(found_pid===0){ //no record on server
+							done=1;
+							$li.removeClass('li_not_allowed__ID')
+							$li.addClass('li_allowed__ID')
+							$li.on('click',function(){
+								var m=group+$(this).attr('module');
+								$vm.nav_load_module(m);
+							});
+							//--------------------------------------------------------
+						}
+					}
+				});
+			}})
+			//--------------------------------------------------------
+		}
+		//--------------------------------------------------------
+	}
+</script>
+<style>
+	#D__ID{
+		/*background: url("__PARTS__/image/texture.png");*/
+		height:100%;
+		overflow: auto;
+		animation: vm_module_fadein 1.0s;
+	}
+	#panel__ID{
+		padding:30px;
+	}
+	#panel__ID li:hover {
+		color:red;
+		cursor:pointer;
+	}
+	.li_not_allowed__ID{
+		color:#999!Important;
+		cursor:not-allowed!Important;
+	}
+	.li_allowed__ID{
+		color:#000!Important;
+		cursor:pointer!Important;
+	}
+</style>

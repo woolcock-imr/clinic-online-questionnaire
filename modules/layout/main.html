@@ -1,0 +1,49 @@
+VmInclude:/modules/layout/top-right-corner.html
+VmInclude:/modules/layout/header.html
+VmInclude:/modules/layout/content-container.html
+VmInclude:/modules/layout/footer.html
+<script main-layout-js-code>
+	function F__ID(){
+		//------------------------------------
+		var set_height=function(){
+			var header_height=$('#header__ID').outerHeight(); $vm.header_height=header_height;
+			var footer_height=$('#footer__ID').outerHeight();
+			$vm.min_height=($(window).height()-header_height-footer_height)+'px';
+			$('#content_container__ID').css({'height':$vm.min_height});
+			$('#content_container__ID').css({'top':header_height+'px'})
+			console.log('window:'+$(window).height()+', header:'+header_height+', footer:'+footer_height);
+		}
+		setTimeout(function (){	set_height();},10);	setTimeout(function (){	set_height();},2000);
+		//------------------------------------
+		window.onmessage=function(e){
+		    if(e.data.username!=undefined && e.data.user_id!=undefined){
+		        $vm.user=e.data.username;
+		        $vm.user_id=e.data.user_id;
+		        $VmAPI.set_token(e.data.token,e.data.api_url,e.data.username,e.data.user_id,e.data.nickname);
+		        location.reload(true);
+		    }
+		};
+		//-----------------------------------------
+		$vm.nav_load_module('home');
+		//-----------------------------------------
+		/*
+		var $image1 = $("<img>");
+		$image1.on('load',(function(){ $('body').css("background", "url("+$(this).attr("src")+") no-repeat bottom center"); $('body').css("background-size", "cover");  }));
+		$image1.attr("src", "__HOST__/images/background.jpg");
+		*/
+		//-----------------------------------------
+	}
+</script>
+<style main-layout-css>
+	html,body{
+		height:100%;
+	}
+	@keyframes vm_module_fadein {
+		from { opacity:0; }
+		to {opacity:1;}
+	}
+	/* overwrite bootstrap */
+	.ui-datepicker-month,.ui-datepicker-year{
+		color:#000;
+	}
+</style>

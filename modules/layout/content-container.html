@@ -1,0 +1,41 @@
+<div content-container id="content_container__ID">
+	<div id=vm_loader class="loader__ID"></div>
+	<script root-container-js>
+		$vm.root_layout_content_slot="content_container__ID";
+	</script>
+	<style root-container-css>
+		#content_container__ID{
+			position:fixed;
+			width:100%;
+		}
+		#vm_loader{
+			display:none;
+			position:absolute;
+		}
+		.loader__ID {
+		  height: 4px;
+		  width: 100%;
+		  position: relative;
+		  overflow: hidden;
+		  background-color: #ddd;
+		}
+		.loader__ID:before{
+		  display: block;
+		  position: absolute;
+		  content: "";
+		  left: -200px;
+		  width: 200px;
+		  height: 4px;
+		  background-color: #2980b9;
+		  animation: loading 2s linear infinite;
+		}
+		@keyframes loading {
+		    from {left: -200px; width: 30%;}
+		    50% {width: 30%;}
+		    70% {width: 70%;}
+		    80% { left: 50%;}
+		    95% {left: 120%;}
+		    to {left: 100%;}
+		}
+	</style>
+</div>

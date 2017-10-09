@@ -1,0 +1,7 @@
+{
+	"modules":
+	{
+		"task-1":	{"url":"/modules/dynamic/task/template.html","table_id":"20011308"},
+        "task-2":	{"url":"/modules/dynamic/task/template.html","table_id":"20011309"}
+	}
+}
