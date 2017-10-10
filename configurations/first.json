@@ -1,7 +1,12 @@
 {
 	"modules":
 	{
-		"task-1":	{"url":"/modules/dynamic/task/template.html","table_id":"20011308"},
+		"health-history":	{"url":"/modules/dynamic/task/health-history.html","table_id":"20011308"},
         "task-2":	{"url":"/modules/dynamic/task/template.html","table_id":"20011309"}
+	},
+	"dictionary":{
+		"health-history":{
+			"heart_failure":"Heart Failure"
+		}
 	}
 }

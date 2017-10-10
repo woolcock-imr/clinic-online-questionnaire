@@ -4,7 +4,7 @@
     <div class='nav__ID'>
 	    <span>Tasks</span>
         <ul>
-			<li module=task-1>Task 1</li>
+			<li module=health-history>Health History</li>
 			<li module=task-2>Task 2</li>
         </ul>
     </div>
@@ -67,7 +67,7 @@
 							$li.addClass('li_allowed__ID')
 							$li.on('click',function(){
 								var m=group+$(this).attr('module');
-								$vm.nav_load_module(m);
+								$vm.nav_load_module(m,$vm.root_layout_content_slot,{db_pid:$vm.module_list[m].table_id});
 							});
 							//--------------------------------------------------------
 						}
