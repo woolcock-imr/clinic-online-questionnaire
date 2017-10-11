@@ -1,5 +1,6 @@
 $('#F__ID').submit(function(event){
 	event.preventDefault();
+	var modx=$vm.vm["__ID"].op.sys.UID
 	var data = {};
 	var a = $("#F__ID").serializeArray();
 	$.each(a, function () {
@@ -22,7 +23,7 @@ $('#F__ID').submit(function(event){
 		PUID:$vm.coq_participant_uid,
 	}
 	//-------------------------------------
-	var req={cmd:"add_json_record_s2",db_pid:$vm.vm["__ID"].op.sys.config.db_pid,data:data,dbv:dbv};
+	var req={cmd:"add_json_record_s2",db_pid:$vm.module_list[modx].table_id,data:data,dbv:dbv};
 	$VmAPI.request({data:req,callback:function(res){
 		if(res.ret<=0)	alert("Sorry there is a problem. You can try again later or wait until you are at Woolcock.")
 		else window.history.back(-1);

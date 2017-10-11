@@ -1,12 +1,70 @@
 {
 	"modules":
 	{
-		"health-history":	{"url":"/modules/dynamic/task/health-history.html","table_id":"20011308"},
-        "task-2":	{"url":"/modules/dynamic/task/template.html","table_id":"20011309"}
+		"health-history":		{"url":"/modules/dynamic/task/health-history.html","table_id":"20011308"},
+		"sleep-history":		{"url":"/modules/dynamic/task/sleep-history.html","table_id":"20011309"},
+		"short-sleep-history":	{"url":"/modules/dynamic/task/short-sleep-history.html","table_id":"20011176"},
+		"personal":				{"url":"/modules/dynamic/task/personal.html","table_id":"20011312"},
+		"medicare-referrals":	{"url":"/modules/dynamic/task/medicare-referrals.html","table_id":"20011175"},
+		"epworth-sleepiness-scale":	{"url":"/modules/dynamic/task/epworth-sleepiness-scale.html","table_id":"20011311"},
+		"additional-questions":	{"url":"/modules/dynamic/task/additional-questions.html","table_id":"20011310"}
 	},
 	"dictionary":{
 		"health-history":{
-			"heart_failure":"Heart Failure"
+			"heart_failure":"Heart failure",
+			"pacemaker":"Pacemaker",
+			"angina":"Angina",
+			"hypertension":"Hypertension",
+			"heart_other_specify":"Heart other specify",
+			"heart_other":"Heart other",
+			"shortness_of_breath":"Shortness of breath",
+			"tuberculosis":"Tuberculosis",
+			"copd":"Copd",
+			"asthma":"Asthma",
+			"lung_other_specify":"Lung other specify",
+			"lung_other":"Lung other",
+			"blood_clot":"Blood clot",
+			"anaemia":"Anaemia",
+			"bleeding":"Bleeding",
+			"diabetes_1":"Diabetes 1",
+			"diabetes_2":"Diabetes 2",
+			"morning_headaches":"Morning headaches",
+			"broken_nose":"Broken nose",
+			"claustrophobia":"Claustrophobia",
+			"thyroid":"Thyroid",
+			"kidney":"Kidney",
+			"hepatitis_a":"Hepatitis a",
+			"hepatitis_b":"Hepatitis b",
+			"hepatitis_c":"Hepatitis c",
+			"alcohol":"Alcohol",
+			"drug":"Drug",
+			"deafness":"Deafness",
+			"blindness":"Blindness",
+			"insomnia":"Insomnia",
+			"anxiety":"Anxiety",
+			"depression":"Depression",
+			"stroke":"Stroke",
+			"hiv":"Hiv",
+			"incontinence":"Incontinence",
+			"arthritis":"Arthritis",
+			"heartburn":"Heartburn",
+			"epilepsy":"Epilepsy",
+			"cataplexy":"Cataplexy",
+			"narcolepsy":"Narcolepsy",
+			"tonsillitis":"Tonsillitis",
+			"sinusitis":"Sinusitis",
+			"mental_other_specify":"Mental other specify",
+			"mental_other":"Mental other",
+			"neuromuscular_other_specify":"Neuromuscular other specify",
+			"neuromuscular_other":"Neuromuscular other",
+			"allergies_other_specify":"Allergies other specify",
+			"allergies_other":"Allergies other",
+			"Other_Medical_Condition":"Other Medical Condition",
+			"Surgical_Procedure":"Surgical Procedure",
+			"Medication":"Medication"
+		},
+		"sleep-history":{
+			"xxxx-history":"yyyyy"
 		}
 	}
 }

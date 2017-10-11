@@ -1,0 +1,83 @@
+<div class="w3-container w3-content">
+<form id=F__ID class="w3-padding-0 w3-margin-0 ">
+        <div class="w3-center w3-padding">
+            <h2 class="w3-xxlarge">Medicare and referring doctors</h2>
+        </div>
+        <div class="w3-container  w3-padding-16">
+            <div class="w3-half" data-id=Medicare_number data-custom=1 >
+                <span class="w3-padding">Medicare Number</span>
+                <div class="w3-center w3-padding">
+                    <input type="text" class="w3-input w3-border" name="Medicare_number" placeholder="Medicare Number">
+                </div>
+            </div>
+            <div class="w3-quarter" data-id=Medicare_reference_number data-custom=1 >
+                <span class="w3-padding">Reference Number</span>
+                <div class="w3-center w3-padding">
+                    <input type="text" class="w3-input w3-border"  name="Medicare_reference_number"  placeholder="Reference Number">
+                </div>
+            </div>
+            <div class="w3-quarter " data-id=Medicare_expiry data-custom=1 >
+                <span class="w3-padding">Expiry</span>
+                <div class="w3-center w3-padding">
+                    <input type="text" class="w3-input w3-border" name="Medicare_expiry"  placeholder="Month/year">
+                </div>
+            </div>
+        </div>
+        <div class="w3-container  w3-padding-16">
+            <div class="w3-half" data-id=Referring_doctor data-custom=1 >
+                <span class="w3-padding">Referring doctor</span>
+                <div class="w3-center w3-padding">
+                    <input type="text" class="w3-input w3-border" name="Referring_doctor" placeholder="Referring doctor">
+                </div>
+            </div>
+            <div class="w3-half " data-id=Referring_doctor_address data-custom=1 >
+                <span class="w3-padding">Referring doctor's address</span>
+                <div class="w3-center w3-padding">
+                    <textarea class="w3-input w3-border"  name="Referring_doctor_address"  placeholder="Address"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="w3-container  w3-padding-16">
+            <div class="w3-half" data-id=GP_Family_doctor data-custom=1 >
+                <span class="w3-padding">GP/Family doctor</span>
+                <div class="w3-center w3-padding">
+                    <input type="text" class="w3-input w3-border" name="GP_Family_doctor" placeholder="GP/Family doctor">
+                </div>
+            </div>
+            <div class="w3-half " data-id=GP_Family_doctor_address data-custom=1 >
+                <span class="w3-padding">GP/Family doctor's address</span>
+                <div class="w3-center w3-padding">
+                    <textarea class="w3-input w3-border" name="GP_Family_doctor_address"  placeholder="Address"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="w3-container  w3-padding-16">
+            <div class="" data-id=DVA data-custom=1 >
+                <span class="w3-padding">Department of Veterans Affairs number:</span>
+                <div class="w3-center w3-padding">
+                    <input type="text" class="w3-input w3-border" name="DVA" placeholder="Department of Veterans Affairs number:">
+                </div>
+            </div>
+        </div>
+        <button type=submit class="w3-btn w3-dark-grey w3-hover-black w3-text-white w3-round-large" >Submit</button>
+	</form>
+</div>
+<script>
+    function F__ID(){
+		VmInclude:__CURRENT_PATH__/task.js
+    }
+</script>
+<style>
+	#D__ID{
+		height:100%;
+		overflow: auto;
+	}
+	#container__ID{
+		padding: 30px 0 0 30px;
+	}
+	@media screen and (max-width:890px){
+		#container__ID{
+			padding: 10px;
+		}
+	}
+</style>
