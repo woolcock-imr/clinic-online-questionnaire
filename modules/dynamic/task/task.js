@@ -32,8 +32,9 @@ $('#F__ID').submit(function(event){
 	$VmAPI.request({data:req,callback:function(res){
 		if(res.ret<=0)	alert("Sorry there is a problem. You can try again later or wait until you are at Woolcock.")
 		else{
-			$vm['vm_history_last_module_name']=module_name;
-			$vm['vm_history_last_module_submit']=1;
+			if($vm.module_list[module_name].alert=="1"){
+				$vm.alert('Your data has been successfully submitted')
+			}
 			window.history.back(-1);
 		}
 	}});
