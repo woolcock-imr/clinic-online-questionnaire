@@ -1,0 +1,25 @@
+<section>
+    VmInclude:__COMPONENT__/grid/grid.v3.html
+</section>
+<script>
+    function F__ID(){
+        //-------------------------------------
+        VmInclude:__COMPONENT__/grid/grid.v3.js
+        //-------------------------------------
+		$('#new__ID').hide();
+		//-------------------------------------
+        var fields="heart_failure,pacemaker,angina,hypertension,heart_other_specify,heart_other,shortness_of_breath,tuberculosis,copd,asthma,lung_other_specify,";
+		fields+="lung_other,blood_clot,anaemia,bleeding,diabetes_1,diabetes_2,morning_headaches,broken_nose,claustrophobia,thyroid,kidney,hepatitis_a,hepatitis_b,";
+		fields+="hepatitis_c,alcohol,drug,deafness,blindness,insomnia,anxiety,depression,stroke,hiv,incontinence,arthritis,"
+		fields+="heartburn,epilepsy,cataplexy,narcolepsy,tonsillitis,sinusitis,mental_other_specify,mental_other,neuromuscular_other_specify,";
+		fields+="neuromuscular_other,allergies_other_specify,allergies_other,Other_Medical_Condition,Surgical_Procedure,Medication";
+
+        _fields="_Form,"+fields+",Submit Date|DateTime,Submitted by|Author,_Delete";
+        //-------------------------------------
+        $('#D__ID').on('load',function(){  _set_req(); _request_data(); })
+        //-------------------------------------
+    }
+</script>
+<style>
+    VmInclude:__COMPONENT__/grid/grid.v3.css
+</style>
