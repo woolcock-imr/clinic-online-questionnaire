@@ -4,6 +4,8 @@
 	"image_path":"https://image.datalinkedin.com",
 	"api_path_development":"https://cbs.wappsystem.com/dev/",
 	"api_path_production":"https://rt.woolcock.org.au/",
+
+	"additional_groups":["first.json"],
 	"parameters":{
 		"visits":["first","second"]
 	},
