@@ -71,10 +71,22 @@
 			"Sex":"Sex",
 			"DOB":"Date of birth",
 			"Residential_Address":"Residential Address",
-			"Name":"Name",
-			"Name":"Name",
-			"Name":"Name",
-			"Name":"Name"
+			"Suburb":"Suburb",
+			"Contact_number":"Phone",
+			"Contact_email":"Email",
+			"Emergency_contact":"Emergency Contact",
+			"Emergency_contact_number":"Emergency Contact Phone"
+		},
+		"medicare-referrals":{
+			"Medicare_number":"Medicare number",
+			"Medicare_reference_number":"Ref",
+			"Medicare_expiry":"Expiry Date",
+			"Residential_Address":"Residential Address",
+			"Referring_doctor":"Referring Doctor",
+			"Referring_doctor_address":"Address",
+			"GP_Family_doctor":"GP/Family Doctor",
+			"GP_Family_doctor_address":"Address",
+			"DVA":"DVA"
 		}
 	}
 }
