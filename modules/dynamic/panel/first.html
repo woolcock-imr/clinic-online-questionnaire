@@ -51,6 +51,7 @@
 				$('#panel__ID li').each(function(){
 					var $li=$(this);
 					$li.off('click');
+					$li.removeClass('li_allowed__ID')
 					$li.addClass('li_not_allowed__ID')
 					if(done===0){
 						var module=$li.attr('module');

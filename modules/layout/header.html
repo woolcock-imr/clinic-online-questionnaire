@@ -1,50 +1,98 @@
-<div header>
-	<div id=header__ID top-navigation class="w3-top">
-		<div id=small__ID class='w3-hide-large'><a onclick="$vm.nav_click_process('home')">Clinic Online Questionnaire</a></div>
-		<div id=large__ID class="w3-hide-small w3-hide-medium">
-			<div id=large_img__ID>
-				<img width=360 src='__HOST__/images/logo.jpg'></img>
-			</div>
-			<div id=large_title__ID>
-				Clinic Online Questionnaire
-			</div>
-		</div>
-	</div>
-	<style>
-		#header__ID{
-			border-bottom:1px solid #888;
+<div header id=header__ID>
+    <nav id=nav__ID class="navbar navbar-expand-md navbar-dark">
+        <a class="navbar-brand d-none d-lg-inline-block" onclick="$vm.nav_load_module('home');">
+        	<div class=large_logo__ID>
+	        	<div class="logo_image__ID"></div>
+				<div class="logo_label__ID">
+	                <div class="large_logo_large_label__ID">
+	                    Clinic Online Questionnaire
+	                </div>
+	            </div>
+	        </div>
+        </a>
+        <a class="navbar-brand d-lg-none" onclick="$vm.nav_load_module('home');">
+            <div class=small_logo__ID>Woolcock</div>
+        </a>
+    </nav>
+    <script>
+        //---------------------------------------------
+        if($vm.user=='guest'){
+            $('a[name=signinout]').html('<i class="fa fa-user"></i> Sign In')
+            $('#username__ID').text('');
+        }
+        else{
+            $('a[name=signinout]').html('<i class="fa fa-user"></i> Sign Out')
+            $('#username__ID').text('Signed in as '+ $vm.user);
+        }
+        //---------------------------------------------
+    </script>
+    <style>
+        #header__ID{
+            background: rgba(255,255,255,1);
+			border-bottom: 1px solid #000;
+        }
+		#nav__ID{
+	        z-index:99;
+			padding:0;
+        }
+		.large_logo__ID{
+            padding-left:230px;
+            display:table;
+        }
+		.logo_image__ID{
+			width:370px;
+			height:90px;
+			background: url('images/logo.jpg') no-repeat;
+			background-size: cover;
 		}
-		#header__ID a{
-		  	cursor:pointer;
+		.logo_label__ID{
+			padding: 20px 0 0 30px;
+			display: table-cell;
+			vertical-align: top;
+			color:#666;
+			font-family: Helvetica,Arial,sans-serif;
 		}
-		#large__ID{
-			display:inline-block;
-		}
-		#small__ID{
-			font: 180% Arial;
-			font-weight: bold;
+		.large_logo_large_label__ID{
+            font-size:200%;
+        }
+        .small_logo__ID{
+            color:#fff;
+			font-size: 150%;
+        }
+		#navbars__ID{
+	        padding-top:55px;
+            padding-left:290px;
+        }
+		#navbars__ID a{
 			color:#000;
-			display: inline-block;
-			margin: 10px 0 5px 10px;
-			padding:3px 0 0 20px;
+            cursor:pointer;
+        }
+		#navbars__ID a:hover{
+			color:red;
+        }
+		@media screen and (max-width:768px){
+			#nav__ID{
+	        	padding:0 10px;
+				background-color:#555;
+			}
+			#header__ID a{
+				color:#000;
+	            cursor:pointer;
+	        }
+			#header__ID a:hover{
+				color:red;
+	            cursor:pointer;
+	        }
+	        #navbars__ID{
+		        padding-top:5px;
+		        padding-left:5px;
+	        }
+			#navbars__ID a{
+				color:#fff;
+	        }
+	        #form__ID{
+		        padding-right:0px;
+	        }
 		}
-		#large__ID a:hover,#small__ID a:hover{
-			color:#000;
-			text-decoration:none;
-		}
-		#small_btn__ID{
-			color:#000;
-			font-size:26px;
-		}
-		#large_img__ID{
- 			float:left;
-			padding:5px 0 5px 90px;
-		}
-		#large_title__ID{
-			float:left;
-			color:#888;
-			font-size:260%;
-			padding:20px 0 0 80px;
-		}
-	</style>
+    </style>
 </div>
