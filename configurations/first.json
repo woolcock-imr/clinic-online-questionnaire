@@ -65,6 +65,16 @@
 		},
 		"sleep-history":{
 			"xxxx-history":"yyyyy"
+		},
+		"personal":{
+			"Name":"Name",
+			"Sex":"Sex",
+			"DOB":"Date of birth",
+			"Residential_Address":"Residential Address",
+			"Name":"Name",
+			"Name":"Name",
+			"Name":"Name",
+			"Name":"Name"
 		}
 	}
 }
