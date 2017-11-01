@@ -1,0 +1,97 @@
+<div class="w3-container w3-content">
+    <form id=F__ID class="w3-padding-0 w3-margin-0 ">
+        <div class="w3-center w3-padding">
+            <h2 class="w3-xxlarge">SHORT SLEEP HISTORY</h2>
+        </div>
+        <div class="w3-container  w3-padding-16">
+            <div class="w3-half"  data-id=snore style='vertical-align:middle' data-custom=1 >
+                <div class="w3-padding-small">
+                    Do you snore?<br>
+                    <input class="w3-radio w3-p" type="radio" name="snore" id=snore_Y__ID value=Yes \>
+                    <label  for=snore_Y__ID>Yes</label>
+                    <input class="w3-radio " type="radio" name="snore" id=snore_N__ID value=No \>
+                    <label for=snore_N__ID>No</label>
+                </div>
+            </div>
+            <div class="w3-half"  data-id=osa style='vertical-align:middle' data-custom=1 >
+                <div class="w3-padding-small">Have you ever been told you stop breathing in your sleep?<br>
+                    <input class="w3-radio w3-p" type="radio" name="osa" id=osa_Y__ID value=Yes \>
+                    <label  for=osa_Y__ID>Yes</label>
+                    <input class="w3-radio " type="radio" name="osa" id=osa_N__ID value=No \>
+                    <label for=osa_N__ID>No</label>
+                </div>
+            </div>
+        </div>
+        <div class="w3-container  w3-padding-16">
+            <div class="w3-half"  data-id=rdb style='vertical-align:middle' data-custom=1 >
+                <div class="w3-padding-small">Has anyone reported that you have unusual movements in your sleep?<br>
+                    <input class="w3-radio w3-p" type="radio" name="rdb" id=rbd_Y__ID value=Yes \>
+                    <label  for=rbd_Y__ID>Yes</label>
+                    <input class="w3-radio " type="radio" name="rdb" id=rdb_N__ID value=No \>
+                    <label for=rdb_N__ID>No</label>
+                </div>
+            </div>
+            <div class="w3-half"  data-id=narcolepsy style='vertical-align:middle' data-custom=1 >
+                <div class="w3-padding-small">Do you have difficulty staying awake during the day?<br>
+                    <input class="w3-radio w3-p" type="radio" name="narcolepsy" id=narcolepsy_Y__ID value=Yes \>
+                    <label  for=narcolepcy_Y__ID>Yes</label>
+                    <input class="w3-radio " type="radio" name="narcolepsy" id=narcolepsy_N__ID value=No \>
+                    <label for=narcolepsy_N__ID>No</label>
+                </div>
+            </div>
+        </div>
+        <div class="w3-container  w3-padding-16">
+            <div class="w3-half"  data-id=insomnia_start style='vertical-align:middle' data-custom=1 >
+                <div class="w3-padding-small">Do you have difficulty falling asleep?<br>
+                    <input class="w3-radio w3-p" type="radio" name="insomnia_start" id=insomnia_start_Y__ID value=Yes \>
+                    <label  for=insomnia_start_Y__ID>Yes</label>
+                    <input class="w3-radio " type="radio" name="insomnia_start" id=insomnia_start_N__ID value=No \>
+                    <label for=insomnia_start_N__ID>No</label>
+                </div>
+            </div>
+            <div class="w3-half"  data-id=insomnia_return style='vertical-align:middle' data-custom=1 >
+                <div class="w3-padding-small">Do you have difficulty getting back to sleep after waking?<br>
+                    <input class="w3-radio w3-p" type="radio" name="insomnia_return" id=insomnia_return_Y__ID value=Yes \>
+                    <label  for=narcolepcy_Y__ID>Yes</label>
+                    <input class="w3-radio " type="radio" name="insomnia_return" id=insomnia_return_N__ID value=No \>
+                    <label for=insomnia_return_N__ID>No</label>
+                </div>
+            </div>
+        </div>
+        <div class="w3-container  w3-padding-16">
+            <div class="w3-half"  data-id=plm style='vertical-align:middle' data-custom=1 >
+                <div class="w3-padding-small">Do you ever have uncomfortable legs and feel like you have to move them around to relieve the discomfort?<br>
+                    <input class="w3-radio w3-p" type="radio" name="plm" id=plm_Y__ID value=Yes \>
+                    <label  for=plm_Y__ID>Yes</label>
+                    <input class="w3-radio " type="radio" name="plm" id=plm_N__ID value=No \>
+                    <label for=plm_N__ID>No</label>
+                </div>
+            </div>
+            <div class="w3-half"  data-id=sleep_start style='vertical-align:middle' data-custom=1 >
+                <div  data-id=sleep_end class="w3-padding-small"  data-custom=1>Approximately what time do you usually go to bed?<br>
+                    Between <input class="w3-input" type="text" name="sleep_start" \> and <input class="w3-input" type="text" name="sleep_end" \>
+                </div>
+            </div>
+        </div>
+        <button type=submit class="w3-btn w3-dark-grey w3-hover-black w3-text-white w3-round-large" >Submit</button>
+	</form>
+</div>
+<script>
+    function F__ID(){
+		VmInclude:__CURRENT_PATH__/task.js
+    }
+</script>
+<style>
+	#D__ID{
+		height:100%;
+		overflow: auto;
+	}
+	#container__ID{
+		padding: 30px 0 0 30px;
+	}
+	@media screen and (max-width:890px){
+		#container__ID{
+			padding: 10px;
+		}
+	}
+</style>

@@ -5,6 +5,9 @@ $('#F__ID').submit(function(event){
 	event.preventDefault();
 	var module_name=$vm.vm["__ID"].name;
 	var db_pid=$vm.module_list[module_name].table_id
+	if(module_name=='epworth-sleepiness-scale'){
+		$('#ESS__ID').val(parseInt($('#ESS_1__ID:checked').val())+parseInt($('#ESS_2__ID:checked').val())+parseInt($('#ESS_3__ID:checked').val())+parseInt($('#ESS_4__ID:checked').val())+parseInt($('#ESS_5__ID:checked').val())+parseInt($('#ESS_6__ID:checked').val())+parseInt($('#ESS_7__ID:checked').val())+parseInt($('#ESS_8__ID:checked').val()))
+	}
 
 	var data = {};
 	var a = $("#F__ID").serializeArray();
