@@ -14,18 +14,11 @@
         $('#signin__ID').on('click',function(){
 			//------------------------------------
 			//get visit
-			var visit=window.location.href.split('?').pop();
-			visit=visit.split('&')[0]; //visit=xxx
-			visit=visit.split('=');
-			if(visit.length!=2 || visit[0]!="visit"){
-				alert("No visit was specified.");
+            var visit=window.location.href.split('visit=').pop().split('&')[0];
+            if(window.location.href.indexOf('visit=')==-1 || visit==''){
+                alert("No visit was specified.");
 				return;
-			}
-			if(visit[1]=='' || visit[1]==undefined){
-				alert("No visit was specified.");
-				return;
-			}
-			visit=visit[1];
+            }
 			//------------------------------------
 			$('#ErrMsg__ID').text("");
             var username=$('#username__ID').val();
@@ -34,8 +27,6 @@
 			 	if(username==="") username="1-20011195";
 			 	if(password==="") password="SYDlUqDc";
 			}
-//username="1-20011195";
-//password="SYDlUqDc";
             var a=username.split('-');
             if(a.length!=2){
                 $('#ErrMsg__ID').text("Invalid participant login ID or password.")
@@ -44,13 +35,6 @@
             var participant_uid=a[0];
             var setup_pid=a[1];
 			//------------------------------------
-			var visits=$vm.app_config.parameters.visits;
-			if(visits.indexOf(visit)==-1){
-				alert('Invalid visit');
-				return;
-			}
-			//------------------------------------
-			//alert(participant_uid+' '+setup_pid+' '+visit);
 			$vm.coq_participant_pid=setup_pid;	//no participant, only visit setup
 			$vm.coq_participant_uid=participant_uid;
 			$vm.coq_participant=participant_uid;
@@ -64,11 +48,9 @@
                     $vm.user_id=res.user_id;
 					$('#username_0').text(username);
                     $VmAPI.set_token(res.token,'');
-                    //$vm.signout_obj.show();
-                    //$vm.username_obj.text('Login as '+ $vm.user);
                     if(res.S1!=undefined) $vm.coq_participant=res.S1;
 					$vm.coq_task_list=res.List;
-					$vm.nav_load_module(visit);
+					$vm.nav_load_module("panel_"+visit);
                 }
                 else{
                     $('#ErrMsg__ID').text("Invalid participant login ID or password.")
