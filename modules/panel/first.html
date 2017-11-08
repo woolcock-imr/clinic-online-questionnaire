@@ -1,10 +1,39 @@
-<a name=signinout onclick="$vm.nav_click_process('vm_signinout');" style='cursor:pointer'>Sign out</a>
+<div id=page__ID>
+	<div id=panel__ID class="container-fluid" style='max-width:800px'>
+		<div class="text-center panel__ID">
+			<h2>Clinic Online Registration</h2>
+    	  	  <hr style='border-top:1px solid #fff;'></hr>
+    				  <h5 class= "text-left">
+                          Please complete each of the following sections. Please call us on XX or email us on XXX if you are having trouble completing these questionnaires or there are questions you do not understand.<br><br>
+                      </h5>
+                      <div class="text-left">
+                          <ul>
+                              <li module=personal>Personal</li>
+                              <li module=medicare-referrals>Medicare Referrals</li>
+                              <li module=sleep-history>Sleep History</li>
+                              <li module=health-history>Health History</li>
+                              <li module=epworth-sleepiness-scale>Epworth Sleepiness Scale</li>
+                              <li module=additional-questions>Additional Questions</li>
+                              <li module=short-sleep-history>Short Sleep History</li>
+                              <li module=volunteer>Become a Research Volunteer</li>
+                          </ul>
+                      </div>
+                      <h5 class= "text-left">
+                          Once they are completed please click on ‘sign-out’ below, to exit the system. Thank you for your time now in helping us help you during your upcoming visit. We look forward to seeing you soon.<br><br>
+                      </h5>
+                      <a name=signinout onclick="$vm.nav_click_process('vm_signinout');" class="btn btn-primary" style='cursor:pointer'>Sign out</a>
+    			  </div>
+              </div>
+		</div>
+	</div>
+</div>
 
+<!--
 <div id=panel__ID>
     <div class='nav__ID container'>
         <div class='row'>
             <div class='col'>
-	    <span><h3>Clinic and Sleep Study Visit Questionnaires</h3><br>
+	    <span><h3>Clinic Online Registration </h3><br>
         Please complete each of the following sections. You will not be able to advance to the next section until you have completed all of the previous sections and questions. Please call us on XX or email us on XXX if you are having trouble completing these questionnaires or there are questions you do not understand.<br><br></span>
         <ul>
             <li module=personal>Personal</li>
@@ -24,7 +53,7 @@
     </div>
 </div>
 </div>
-
+-->
 <script>
 	function F__ID(){
 		//--------------------------------------------------------
@@ -116,25 +145,30 @@
 </script>
 <style>
 	#D__ID{
-		/*background: url("__PARTS__/image/texture.png");*/
 		height:100%;
-		overflow: auto;
+        overflow:auto;
 		animation: vm_module_fadein 1.0s;
-        background-color: #fff;
+		background:rgba(255,255,255,0.2);
 	}
-	#panel__ID{
-		padding:30px;
+	#page__ID{
+		height:100%;
+		display: flex;
+		align-items: center;
 	}
-	#panel__ID li:hover {
-		color:red;
+	.panel__ID{
+		color:#ddd;
+		font-weight: normal;
+		background: rgba(20,20,20,0.8);
+	    padding: 30px 20px 10px 20px;
+	    border-radius: 15px;
+	}
+	@media screen and (max-width:786px){
+		#page__ID{
+			display: block;
+		}
+	}
+    #panel__ID li{
 		cursor:pointer;
 	}
-	.li_not_allowed__ID{
-		color:#999!Important;
-		cursor:not-allowed!Important;
-	}
-	.li_allowed__ID{
-		color:#000!Important;
-		cursor:pointer!Important;
-	}
+
 </style>

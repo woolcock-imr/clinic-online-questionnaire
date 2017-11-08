@@ -1,4 +1,26 @@
 
+<div id=page__ID>
+	<div id=panel__ID class="container-fluid" style='max-width:400px'>
+		<div class="text-center panel__ID">
+            <h1  class="text-center" >Sign In
+            <br>
+            </h1>
+            <hr style='border-top:1px solid #fff;'></hr>
+            <div class="">
+                <input id=username__ID placeholder="Username" class="form-control" autocomplete="off" />
+            </div>
+            <br>
+            <div class="">
+                <input class="form-control" id=password__ID type="password" placeholder="Password"  />
+            </div>
+                <br><span id="ErrMsg__ID" style='color:red'></span>
+            <div class="">
+                <input id=signin__ID type=button value='Sign in' class="btn btn-primary" value="Sign In" />&nbsp;&nbsp;&nbsp;
+            </div>
+		</div>
+	</div>
+</div>
+<!--
 <section>
     <div class=C__ID__s>
         <p></p>
@@ -9,6 +31,7 @@
         <br>
     </div>
 </section>
+-->
 <script>
     function F__ID(){
         $('#signin__ID').on('click',function(){
@@ -61,66 +84,31 @@
     }
 </script>
 <style>
-    #D__ID{
-        height:100%;
+	#D__ID{
+		height:100%;
         overflow:auto;
-        animation: vm_module_fadein 1.0s;
-        background-color: #fff;
-    }
-    .C__ID__s{
-        font: 18pt "Arial";
-        padding:80px;
-    }
-    @media all and (max-width: 480px){
-    	.C__ID__s{
-        	padding-left:20px;
-    	}
-    }
-    .C__ID__input{
-        height: 34px;
-        width:260px;
-        color: #555;
-        adisplay: inline-block;
-        padding: 1px 6px;
-        font-size: 10pt;
-        background-color: #fff;
-        background-image: none;
-        border: 1px solid #ccc;
-        border-radius: 2px;
-        margin-bottom: 0;
-    }
-    .C__ID__button {
-        margin:16px 0;
-        -webkit-appearance: button;
-        cursor: pointer;
-        color: #fff;
-        background-color: #428bca;
-        border-color: #357ebd;
-        display: inline-block;
-        padding: 6px 12px;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 1.42857143;
-        text-align: center;
-        white-space: nowrap;
-        vertical-align: middle;
-        background-image: none;
-        border: 1px solid transparent;
-        border-radius: 4px;
-    }
-    .C__ID__button:hover{
-        background-color: #3276b1;
-        border-color: #285e8e;
-    }
-    .C__ID__s *{
-        margin: 6px 0;
-    }
-    .C__ID__s span{
-        color:#FF0000;
-        font: 12pt "Arial";
-    }
-    .C__ID__s u{
-    	cursor:pointer;
-        font: 12pt "Arial";
-    }
+		animation: vm_module_fadein 1.0s;
+		background:rgba(255,255,255,0.2);
+	}
+	#page__ID{
+		height:100%;
+		display: flex;
+		align-items: center;
+	}
+	.panel__ID{
+		color:#ddd;
+		font-weight: normal;
+		background: rgba(20,20,20,0.8);
+	    padding: 30px 20px 10px 20px;
+	    border-radius: 15px;
+	}
+	@media screen and (max-width:786px){
+		#page__ID{
+			display: block;
+		}
+	}
+    #panel__ID li{
+		cursor:pointer;
+	}
+
 </style>
