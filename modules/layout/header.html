@@ -1,17 +1,17 @@
 <div header id=header__ID>
     <nav id=nav__ID class="navbar navbar-expand-md navbar-dark">
         <div id=brand__ID>
-            <a class="navbar-brand d-none d-lg-inline-block" onclick="$vm.nav_load_module('home');">
+            <a class="navbar-brand d-none d-lg-inline-block" onclick="$vm.nav_load_module('panel_main_home');">
             	<div class=large_logo__ID>
-    	        	<div class="logo_image__ID"></div>
+    	        	<img width=360 src='images/logo.gif' style='margin-top:10px;margin-bottom:10px'></img>
     				<div class="logo_label__ID">
     	                <div class="large_logo_large_label__ID">
-    	                    Clinic Online Response
+    	                    Clinic
     	                </div>
     	            </div>
     	        </div>
             </a>
-            <a class="navbar-brand d-lg-none" onclick="$vm.nav_load_module('home');">
+            <a class="navbar-brand d-lg-none" onclick="$vm.nav_load_module('panel_main_home');">
                 <div class=small_logo__ID>Woolcock</div>
             </a>
         </div>
@@ -41,12 +41,6 @@
             padding-left:230px;
             display:table;
         }
-		.logo_image__ID{
-            width:500px;
-			height:95px;
-			background: url('images/logo.gif') no-repeat;
-			background-size: cover;
-		}
 		.logo_label__ID{
 			padding: 20px 0 0 30px;
 			display: table-cell;

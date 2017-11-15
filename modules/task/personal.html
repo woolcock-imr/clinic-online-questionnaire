@@ -7,51 +7,51 @@
             <div class="row row__ID">
                 <div class="col-sm-6" >
                     Name <i>(Last, First, M.I.)</i>
-                    <input  class="form-control" type="text" id=Name__ID name="Name" placeholder="Name (Last, First, M.I.)">
+                    <input  class="form-control" type="text" id=Name__ID name="Name" placeholder="Name (Last, First, M.I.)" required>
                 </div>
                 <div class="col-sm-3">
                     Sex
-                    <select  class="form-control" name=Sex id=Sex__ID ><option> </option><option>Male</option><option>Female</option><option>Indeterminate/Intersex/Unspecified</option></select>
+                    <select  class="form-control" name=Sex id=Sex__ID required><option> </option><option>Male</option><option>Female</option><option>Indeterminate/Intersex/Unspecified</option></select>
                 </div>
                 <div class="col-sm-3" >
                     DOB
-                    <input  class="form-control" type="text" id=DOB__ID name="DOB"  placeholder="DOB">
+                    <input  class="form-control" type="text" id=DOB__ID name="DOB"  placeholder="DOB" required >
                 </div>
             </div>
             <div class="row row__ID">
                 <div class="col-sm">
                     Residential Address
-                        <textarea class="form-control"  name="Residential_Address" id="Residential_Address__ID" placeholder="Residential Address"></textarea>
+                        <textarea class="form-control"  name="Residential_Address" id="Residential_Address__ID" placeholder="Residential Address" required ></textarea>
                 </div>
             </div>
             <div  class="row row__ID">
                 <div class="col-sm">
                     Suburb/Town
-                    <input class="form-control" type="text" name="Suburb" id=Suburb__ID placeholder="Suburb/Town">
+                    <input class="form-control" type="text" name="Suburb" id=Suburb__ID placeholder="Suburb/Town" required >
                 </div>
                 <div class="col-sm">
                     Postcode
-                    <input class="form-control" type="text" name="Postcode" id=Postcode__ID placeholder="Postcode">
+                    <input class="form-control" type="text" name="Postcode" id=Postcode__ID placeholder="Postcode" required >
                 </div>
             </div>
             <div  class="row row__ID">
                 <div class="col-sm">
                     Contact number
-                    <input class="form-control" type="text" name="Contact_number" id=Contact_number__ID placeholder="Contact number">
+                    <input class="form-control" type="text" name="Contact_number" id=Contact_number__ID placeholder="Contact number" required>
                 </div>
                 <div class="col-sm">
                     Contact email
-                    <input class="form-control" type="text" name="Contact_email" id=Contact_email__ID placeholder="Contact email">
+                    <input class="form-control" type="email" name="Contact_email" id=Contact_email__ID placeholder="Contact email" required>
                 </div>
             </div>
             <div  class="row row__ID">
                 <div class="col-sm">
                     Emergency contact
-                    <input class="form-control" type="text" name="Emergency_contact" id=Emergency_contact__ID placeholder="Emergency contact">
+                    <input class="form-control" type="text" name="Emergency_contact" id=Emergency_contact__ID placeholder="Emergency contact" required>
                 </div>
                 <div class="col-sm">
                     Emergency contact number
-                    <input class="form-control" type="text" name="Emergency_contact_number" id=Emergency_contact_number__ID placeholder="Emergency contact number">
+                    <input class="form-control" type="text" name="Emergency_contact_number" id=Emergency_contact_number__ID placeholder="Emergency contact number" required>
                 </div>
             </div>
             <br>
@@ -62,6 +62,7 @@
 <script>
 function F__ID(){
     VmInclude:__CURRENT_PATH__/task.js
+    $("input#DOB__ID").datepicker({yearRange:"-120:+0",dateFormat:'dd/mm/yy',changeMonth:true, changeYear:true});
 }
 </script>
 <style>
@@ -108,7 +109,7 @@ function F__ID(){
 	    margin: 0;
 	    padding: 0;
 	}
-	@media screen and (max-width:768px){
+	@media screen and (max-width:1200px){
 		#form_container__ID{
 			padding:20px 10px 50px 10px;
 		}
