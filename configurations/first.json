@@ -5,10 +5,11 @@
 		"sleep-history":		{"url":"/modules/task/sleep-history.html","table_id":"20011309"},
 		"short-sleep-history":	{"url":"/modules/task/short-sleep-history.html","table_id":"20011176"},
 		"personal":				{"url":"/modules/task/personal.html","table_id":"20011312"},
-		"medicare-referrals":	    {"url":"/modules/task/medicare-referrals.html","table_id":"20011175"},
+		"medicare-referrals":	{"url":"/modules/task/medicare-referrals.html","table_id":"20011175"},
 		"epworth-sleepiness-scale":	{"url":"/modules/task/epworth-sleepiness-scale.html","table_id":"20011311"},
-		"additional-questions":	    {"url":"/modules/task/additional-questions.html","table_id":"20011310"},
-		"volunteer":	            {"url":"/modules/task/volunteer.html","table_id":"20011342"}
+		"additional-questions":	{"url":"/modules/task/additional-questions.html","table_id":"20011310"},
+		"consent":	            {"url":"/modules/task/consent.html","table_id":"20011345"},
+		"volunteer":	        {"url":"/modules/task/volunteer.html","table_id":"20011342"}
 	},
     "dictionary":
     {

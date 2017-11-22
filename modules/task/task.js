@@ -1,4 +1,5 @@
 var rid,pid;
+var alert_validation="";
 $('#D__ID').on('load',function(){
 	$("#F__ID")[0].reset();
     rid=$vm.vm['__ID'].op.sys.config.rid;
@@ -12,8 +13,10 @@ $('#D__ID').on('load',function(){
                     var type = $el.attr('type');
                     switch(type){
                         case 'checkbox':
-                            $('input[name="' + name+ '"][value="' + value + '"]').prop('checked', true);
-                            break;
+						alert(name+' '+value)
+							if(name==value)	$('input[name="' + name+ '"][value="' + value + '"]').prop('checked', true);
+							else $('input[name="' + name+ '"][value="' + value + '"]').prop('checked', false);
+	                        break;
                         case 'radio':
 							$('input[name="' + name+ '"][value="' + value + '"]').prop('checked', true);
                             break;
@@ -27,6 +30,7 @@ $('#D__ID').on('load',function(){
 })
 $('#F__ID').submit(function(event){
 	event.preventDefault();
+	if(alert_validation!="") {$vm.alert(alert_validation); return false;}
 	var module_name=$vm.vm["__ID"].name;
 	var db_pid=$vm.module_list[module_name].table_id
 	if(module_name=='panel_first_epworth-sleepiness-scale'){

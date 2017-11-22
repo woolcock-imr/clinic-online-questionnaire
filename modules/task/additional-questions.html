@@ -8,26 +8,26 @@
             <div class="row row__ID">
                 <div class="col-sm" >
                     Tea
-                    <input  class="form-control" type="text" id=Name__ID name="Tea" placeholder="Tea">
+                    <input  class="form-control" type="text" id=Tea__ID name="Tea" required placeholder="Tea">
                 </div>
                 <div class="col-sm">
                     Coffee
-                    <input  class="form-control" type="text" id=Name__ID name="Coffee" placeholder="Coffee">
+                    <input  class="form-control" type="text" id=Coffee__ID name="Coffee" required placeholder="Coffee">
                 </div>
                 <div class="col-sm" >
                     Cola
-                    <input  class="form-control" type="text" id=DOB__ID name="Cola"  placeholder="Cola">
+                    <input  class="form-control" type="text" id=Cola__ID name="Cola"  required placeholder="Cola">
                 </div>
                 <div class="col-sm" >
                     Alcohol
-                    <input  class="form-control" type="text" id=DOB__ID name="Alcohol"  placeholder="Alcohol">
+                    <input  class="form-control" type="text" id=Alcohol__ID name="Alcohol"  required placeholder="Alcohol">
                 </div>
             </div>
             Are you a:
             <div class="row row__ID">
                 <div class="col-sm" >
                     <label class="control control-radio">Current smoker
-                            <input type="radio"  name="smoker" id=smoker__ID value='Current smoker' />
+                            <input type="radio"  name="smoker" id=smoker__ID value='Current smoker' required />
                         <div class="control_indicator"></div>
                     </label>
                 </div>
@@ -80,31 +80,31 @@
             <div class="row row__ID">
                 <div class="col-sm" >
                     <label class="control control-checkbox">None
-                            <input type="checkbox"  name="None" />
+                            <input type="checkbox"  name="None" id=None__ID value=None required />
                         <div class="control_indicator"></div>
                     </label>
                 </div>
                 <div class="col-sm" >
                     <label class="control control-checkbox">MRSA (Golden Staph)
-                            <input type="checkbox"  name="MRSA" />
+                            <input type="checkbox"  name="MRSA" id=MRSA__ID value=MRSA />
                         <div class="control_indicator"></div>
                     </label>
                 </div>
                 <div class="col-sm" >
                     <label class="control control-checkbox">VRE
-                            <input type="checkbox"  name="VRE" />
+                            <input type="checkbox"  name="VRE" id=VRE__ID value=VRE />
                         <div class="control_indicator"></div>
                     </label>
                 </div>
                 <div class="col-sm" >
                     <label class="control control-checkbox">MRAB
-                            <input type="checkbox"  name="MRAB" />
+                            <input type="checkbox"  name="MRAB" id=MRAB__ID value=MRAB />
                         <div class="control_indicator"></div>
                     </label>
                 </div>
                 <div class="col-sm" >
                     <label class="control control-checkbox">Other
-                            <input type="checkbox"  name="Other" />
+                            <input type="checkbox"  name="Other" id=Other__ID value='Other' />
                         <div class="control_indicator"></div>
                     </label>
                     <div class="col-sm">
@@ -127,7 +127,7 @@
                 <div class="col-sm control-group">
                     <span id=quest__ID>Are you wheelchair bound?</span>
                     <label class="control control-radio">Yes
-                            <input type="radio"  name="wheelchair" id=wheelchair__ID value=Yes />
+                            <input type="radio"  name="wheelchair" id=wheelchair__ID value=Yes required/>
                         <div class="control_indicator"></div>
                     </label>
                     <label class="control control-radio">No
@@ -138,7 +138,7 @@
                 <div class="col-sm control-group">
                     <span id=quest__ID>Do you require a carer with you on the night of your sleep study?</span>
                     <label class="control control-radio">Yes
-                            <input type="radio"  name="carer" id=carer__ID value=Yes />
+                            <input type="radio"  name="carer" id=carer__ID value=Yes required/>
                         <div class="control_indicator"></div>
                     </label>
                     <label class="control control-radio">No
@@ -151,7 +151,7 @@
                 <div class="col-sm control-group">
                     <span id=quest__ID>Do you require an interpreter?</span>
                     <label class="control control-radio">Yes
-                            <input type="radio"  name="interpreter" id=interpreter__ID value=Yes />
+                            <input type="radio"  name="interpreter" id=interpreter__ID value=Yes required/>
                         <div class="control_indicator"></div>
                     </label>
                     <label class="control control-radio">No
@@ -166,7 +166,7 @@
                 <div class="col-sm control-group">
                     <span id=quest__ID>Do you require a special diet?</span>
                     <label class="control control-radio">Yes
-                            <input type="radio"  name="diet" id=diet__ID value=Yes />
+                            <input type="radio"  name="diet" id=diet__ID value=Yes required/>
                         <div class="control_indicator"></div>
                     </label>
                     <label class="control control-radio">No
@@ -187,6 +187,41 @@
 <script>
 function F__ID(){
     VmInclude:__CURRENT_PATH__/task.js
+    $("input[name='smoker']").change(function(){
+        radioValue = $(this).val();
+        if(radioValue=='Current smoker') {$('#smoker_per_day__ID').prop('required',true);$('#smoker_years__ID').prop('required',true);}
+        else {$('#smoker_per_day__ID').prop('required',false);$('#smoker_years__ID').prop('required',false);}
+        if(radioValue=='Ex-smoker') {$('#ex_smoker_per_day__ID').prop('required',true);$('#ex_smoker_years__ID').prop('required',true);$('#ex_smoker_quit__ID').prop('required',true);}
+        else {$('#ex_smoker_per_day__ID').prop('required',false);$('#ex_smoker_years__ID').prop('required',false);$('#ex_smoker_quit__ID').prop('required',false);}
+    })
+    $("input[type=checkbox]").change(function(){
+        if($('#None__ID').prop('checked')==false && $('#MRSA__ID').prop('checked')==false && $('#VRE__ID').prop('checked')==false && $('#MRAB__ID').prop('checked')==false && $('#Other__ID').prop('checked')==false )
+        {$('#None__ID').prop('required',true);}
+        else {$('#None__ID').prop('required',false);}
+        if($('#Other__ID').prop('checked')==true){$('#infectious_diseases_other__ID').prop('required',true);}
+        else {$('#infectious_diseases_other__ID').prop('required',false);}
+        if($('#MRSA__ID').prop('checked')==true || $('#VRE__ID').prop('checked')==true || $('#MRAB__ID').prop('checked')==true || $('#Other__ID').prop('checked')==true )
+        {$('#infectious_diseases_year__ID').prop('required',true);$('#infectious_diseases_site').prop('required',true);}
+        else {$('#infectious_diseases_year__ID').prop('required',false);$('#infectious_diseases_site').prop('required',false);}
+
+        if($('#None__ID').prop('checked')==false) {$('#None__ID').val('');};
+        if($('#MRSA__ID').prop('checked')==false) {$('#MRSA__ID').val('');};
+        if($('#VRE__ID').prop('checked')==false) {$('#VRE__ID').val('');};
+        if($('#MRAB__ID').prop('checked')==false) {$('#MRAB__ID').val('');};
+        if($('#Other__ID').prop('checked')==false) {$('#Other__ID').val('');};
+
+    })
+    $("input[name='interpreter']").change(function(){
+        radioValue = $(this).val();
+        if(radioValue=='Yes') {$('#interpreter_language__ID').prop('required',true);}
+        else {$('#interpreter_language__ID').prop('required',false)}
+    })
+    $("input[name='diet']").change(function(){
+        radioValue = $(this).val();
+        if(radioValue=='Yes') {$('#diet_type__ID').prop('required',true);}
+        else {$('#diet_type__ID').prop('required',false)}
+    })
+
 }
 </script>
 <style>

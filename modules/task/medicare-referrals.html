@@ -85,6 +85,7 @@
 <script>
 function F__ID(){
     VmInclude:__CURRENT_PATH__/task.js
+
     $('#alert_success__ID').hide();
     $('#alert_fail__ID').hide();
     $("input[name='benefits']").change(function(){
@@ -121,15 +122,20 @@ function F__ID(){
              if(checksum==parseInt(output[8])){
                  $('#alert_success__ID').show();
                  $('#alert_fail__ID').hide();
+                 alert_validation="";
              }
              else{
                  $('#alert_success__ID').hide();
                  $('#alert_fail__ID').show();
+                 alert_validation="Please check for wrong Entry";
+                 $('#ModalLabel').html('Error!');
              }
          }
         else {
             $('#alert_success__ID').hide();
             $('#alert_fail__ID').show();
+            alert_validation="Please check for wrong Entry";
+            $('#ModalLabel').html('Error!');
         }
     })
     $("input#Medicare_expiry__ID").datepicker({yearRange:"-0:+5",dateFormat:'mm/y',changeMonth:true, changeYear:true});
