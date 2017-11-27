@@ -9,11 +9,11 @@
             Please volunteer to take part in a research project, help us to help you and others.<br><br></span>
             <div class="row row__ID">
                 <div class="col-sm control-group">
-                    <label class="control control-checkbox"><span id=xquest__ID>I would like to participate in medical research and agree to be contacted for more information</span>
+                    <label class="control control-checkbox"><span id=xquest__ID>I, <label id=p1__ID></label>, would like to participate in medical research and agree to be contacted for more information</span>
                         <input type="checkbox" name="Medical_Research" id=Medical_Research__ID value='medical research'>
                         <div class="control_indicator"></div>
                     </label>
-                    <label class="control control-checkbox"> <span id=xquest__ID>I would like to receive updates, including the latest medical findings and break-throughs in respiratory and sleep research, from the Woolcock Institute</span>
+                    <label class="control control-checkbox"> <span id=xquest__ID>I, <label id=p2__ID></label>, would like to receive updates, including the latest medical findings and break-throughs in respiratory and sleep research, from the Woolcock Institute</span>
                             <input type="checkbox"  name="Newsletters" id=Newsletters__ID value='newsletters' >
                         <div class="control_indicator"></div>
                     </label>
@@ -72,6 +72,8 @@
 <script>
 function F__ID(){
     VmInclude:__CURRENT_PATH__/task.js
+    $('#p1__ID').text($vm.coq_participant)
+    $('#p2__ID').text($vm.coq_participant)
 }
 </script>
 <style>

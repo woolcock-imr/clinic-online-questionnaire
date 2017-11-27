@@ -4,7 +4,7 @@
 	</div>
     <form id=F__ID>
         <div class="container">
-            <h4>I consent to:</h4>
+            <h4>I, <label id=p1__ID></label>, consent to:</h4>
             <div class="">
                 <label class="control control-checkbox">My sleep study and/or daytime test being video/audia recorded for diagnostic purposes
                         <input type="checkbox"  name="video_recording" id=video_recording__ID required />
@@ -60,6 +60,7 @@
 <script>
 function F__ID(){
     VmInclude:__CURRENT_PATH__/task.js
+    $('#p1__ID').text($vm.coq_participant)
     $("input[name='parked']").change(function(){
         radioValue = $(this).val();
         if(radioValue=='Yes') {$('#vehicle_type__ID').prop('required',true);$('#registration_number__ID').prop('required',true);}
