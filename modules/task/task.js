@@ -63,6 +63,9 @@ $('#F__ID').submit(function(event){
 	$("#F__ID input:checkbox:not(:checked)").each(function(){
 		data[this.name]="off";
 	})
+	$("#F__ID input:checkbox:checked").each(function(){
+		data[this.name]="on";
+	})
 
 	data.Participant=$vm.coq_participant;
 	data.Participant_uid=$vm.coq_participant_uid;
