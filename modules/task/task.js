@@ -13,13 +13,6 @@ $('#D__ID').on('load',function(){
 					var $el = $('#F__ID *[name='+name+']');
                     var type = $el.attr('type');
                     switch(type){
-						/*
-                        case 'checkbox':
-						alert(name+' '+value)
-							if(name==value)	$('input[name="' + name+ '"][value="' + value + '"]').prop('checked', true);
-							else $('input[name="' + name+ '"][value="' + value + '"]').prop('checked', false);
-	                        break;
-							*/
 						case 'checkbox':
 							if(value!='off') $el.attr('checked', true);
 							else $el.attr('checked', false);
@@ -43,21 +36,6 @@ $('#F__ID').submit(function(event){
 	if(module_name=='panel_first_epworth-sleepiness-scale'){
 		$('#ESS__ID').val(parseInt($('#ESS_1__ID:checked').val())+parseInt($('#ESS_2__ID:checked').val())+parseInt($('#ESS_3__ID:checked').val())+parseInt($('#ESS_4__ID:checked').val())+parseInt($('#ESS_5__ID:checked').val())+parseInt($('#ESS_6__ID:checked').val())+parseInt($('#ESS_7__ID:checked').val())+parseInt($('#ESS_8__ID:checked').val()))
 	}
-	/*
-	var data = {};
-	var a = $("#F__ID").serializeArray();
-	$.each(a, function () {
-		if (data[this.name]) {
-			if (!data[this.name].push) {
-				data[this.name] = [data[this.name]];
-			}
-			data[this.name].push(this.value || '');
-		}
-		else {
-			data[this.name] = this.value || '';
-		}
-	});
-	*/
 	var data={};
 	var a=$("#F__ID").serializeArray(); $.each(a, function () {	data[this.name]=this.value || '';});
 	$("#F__ID input:checkbox:not(:checked)").each(function(){
